@@ -1,0 +1,6 @@
+[submodule "dependencies/platformjs"]
+	path = dependencies/platformjs
+	url = git://github.com/bestiejs/platform.js.git
+[submodule "dependencies/benchmarkjs"]
+	path = dependencies/benchmarkjs
+	url = git://github.com/bestiejs/benchmark.js.git

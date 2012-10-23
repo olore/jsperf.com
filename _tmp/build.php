@@ -65,11 +65,11 @@ if (isset($_POST['code'])) {
 	echo $output;
 } else {
 	header('Content-Type: text/html;charset=UTF-8');
-	$convert = array(
-		'gaId = \'\'' => 'gaId = \'UA-6065217-40\'',
-		'if (freeExports)' => 'if (false)',
-		'\'selector\': \'\'' => '\'selector\': \'#bs-results\'',
-		'archive = \'../../nano.jar\'' => 'archive = \'/_jar/nano.jar\''
+	$convert = array(                                                  #TODO: Should be able to change the some other way
+		'gaId = \'\'' => 'gaId = \'UA-6065217-40\'',                     #ui.js
+		'if (freeExports)' => 'if (false)',                              #benchmark.js
+		'\'selector\': \'\'' => '\'selector\': \'#bs-results\'',         #ui.browserscope.js
+		'archive = \'../../nano.jar\'' => 'archive = \'/_jar/nano.jar\'' #ui.js
 	);
 	$_SESSION['admin'] = true;
 	$files = array(
