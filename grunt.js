@@ -19,8 +19,14 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      test: {
+      replace_vars: {
           command: 'php ./_tmp/replace_vars.php',
+          stdout: true,
+          stderr: true,
+          failOnError: true
+      },
+      init_submodules: {
+          command: 'git submodule init; git submodule update',
           stdout: true,
           stderr: true,
           failOnError: true
@@ -47,7 +53,7 @@ module.exports = function(grunt) {
 
 
   // Default task.
-  grunt.registerTask('default', 'concat shell min copy');
+  grunt.registerTask('default', 'shell:init_submodules concat shell:replace_vars min copy');
 
 
 };
