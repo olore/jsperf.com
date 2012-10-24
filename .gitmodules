@@ -4,3 +4,6 @@
 [submodule "dependencies/benchmarkjs"]
 	path = dependencies/benchmarkjs
 	url = git://github.com/bestiejs/benchmark.js.git
+[submodule "dependencies/html5js"]
+	path = dependencies/html5js
+	url = git://github.com/bestiejs/html5.js
