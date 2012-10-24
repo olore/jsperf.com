@@ -3,5 +3,6 @@ _inc/config.php
 _inc/version.txt
 _tmp/.htpasswd
 _js/main*.js
+_js/html5.js
 googlebaa804d93ff10d4a.html
 node_modules

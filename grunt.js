@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
 
-  grunt.loadNpmTasks('grunt-contrib'); //https://npmjs.org/package/grunt-contrib , $ npm install grunt-contrib-copy
+  grunt.loadNpmTasks('grunt-contrib'); //https://npmjs.org/package/grunt-contrib , $ npm install grunt-contrib grunt-contrib-copy
+  grunt.loadNpmTasks('grunt-shell');   //https://github.com/sindresorhus/grunt-shell, $ npm install grunt-shell
+
 
 
   grunt.initConfig({
@@ -13,6 +15,15 @@ module.exports = function(grunt) {
                 'dependencies/benchmarkjs/plugin/ui.browserscope.js'
         ],
         dest: '_js/main.src.js'
+      }
+    },
+
+    shell: {
+      test: {
+          command: 'php ./_tmp/replace_vars.php',
+          stdout: true,
+          stderr: true,
+          failOnError: true
       }
     },
 
@@ -36,7 +47,7 @@ module.exports = function(grunt) {
 
 
   // Default task.
-  grunt.registerTask('default', 'concat copy min');
+  grunt.registerTask('default', 'concat shell min copy');
 
 
 };
